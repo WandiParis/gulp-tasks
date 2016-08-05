@@ -47,6 +47,10 @@ export {
 
 Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
+Valeur par défaut : `'assets/fonts/**/*'`
+
 ### dest
 
 Voir [le paramètre `path` de `gulp.dest`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
+
+Valeur par défaut : `'web/fonts'`
