@@ -2,9 +2,8 @@
 
 import gulp from 'gulp'
 import newer from 'gulp-newer'
-import Fontmin from 'fontmin'
+import fontmin from 'gulp-fontmin'
 import config from './config'
-import ttf2woff2 from 'gulp-ttf2woff2'
 
 const task = (params = {}) => {
     const cfg = {
@@ -17,20 +16,11 @@ const task = (params = {}) => {
         dest
     } = cfg
 
-    const fonts = (done) => {
-        const fontmin = new Fontmin()
-            .src(src)
-            .use(newer(dest))
-            .use(ttf2woff2({clone: true}))
-            .dest(dest)
-
-        fontmin.run((err) => {
-            if (err) {
-                throw err
-            }
-
-            done()
-        })
+    const fonts = () => {
+        return gulp.src(src)
+            .pipe(newer(dest))
+            .pipe(fontmin())
+            .pipe(gulp.dest(dest))
     }
 
     fonts.displayName = 'fonts'

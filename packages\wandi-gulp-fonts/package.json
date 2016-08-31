@@ -18,10 +18,9 @@
   },
   "homepage": "https://github.com/WandiParis/gulp-fonts#readme",
   "dependencies": {
-    "fontmin": "^0.9.6",
     "gulp": "github:gulpjs/gulp#4.0",
-    "gulp-newer": "^1.2.0",
-    "gulp-ttf2woff2": "^2.0.2"
+    "gulp-fontmin": "^0.7.4",
+    "gulp-newer": "^1.2.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",

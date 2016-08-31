@@ -15,17 +15,13 @@ var _gulpNewer = require('gulp-newer');
 
 var _gulpNewer2 = _interopRequireDefault(_gulpNewer);
 
-var _fontmin = require('fontmin');
+var _gulpFontmin = require('gulp-fontmin');
 
-var _fontmin2 = _interopRequireDefault(_fontmin);
+var _gulpFontmin2 = _interopRequireDefault(_gulpFontmin);
 
 var _config = require('./config');
 
 var _config2 = _interopRequireDefault(_config);
-
-var _gulpTtf2woff = require('gulp-ttf2woff2');
-
-var _gulpTtf2woff2 = _interopRequireDefault(_gulpTtf2woff);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -38,16 +34,8 @@ var task = function task() {
     var dest = cfg.dest;
 
 
-    var fonts = function fonts(done) {
-        var fontmin = new _fontmin2.default().src(src).use((0, _gulpNewer2.default)(dest)).use((0, _gulpTtf2woff2.default)({ clone: true })).dest(dest);
-
-        fontmin.run(function (err) {
-            if (err) {
-                throw err;
-            }
-
-            done();
-        });
+    var fonts = function fonts() {
+        return _gulp2.default.src(src).pipe((0, _gulpNewer2.default)(dest)).pipe((0, _gulpFontmin2.default)()).pipe(_gulp2.default.dest(dest));
     };
 
     fonts.displayName = 'fonts';
