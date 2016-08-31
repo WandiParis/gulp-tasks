@@ -15,7 +15,7 @@ Paramètres par défaut :
 ```js
 // gulpfile.babel.js
 
-import images from gulp-fonts
+import images from 'gulp-fonts'
 
 const compile = fonts()
 
@@ -29,7 +29,7 @@ Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
 ```js
 // gulpfile.babel.js
 
-import images from gulp-fonts
+import images from 'gulp-fonts'
 
 const compile = fonts({
     src: 'path/to/fonts/**/*',
