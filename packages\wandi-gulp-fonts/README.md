@@ -1,4 +1,4 @@
-# gulp-images
+# gulp-fonts
 
 Tâche gulp pour convertir et compresser des fonts
 
