@@ -39,10 +39,6 @@ var _cssnano = require('cssnano');
 
 var _cssnano2 = _interopRequireDefault(_cssnano);
 
-var _minimist2 = require('minimist');
-
-var _minimist3 = _interopRequireDefault(_minimist2);
-
 var _config = require('./config');
 
 var _config2 = _interopRequireDefault(_config);
@@ -50,7 +46,7 @@ var _config2 = _interopRequireDefault(_config);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles() {
-    var params = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var params = arguments.length <= 0 || arguments[0] === undefined ? { production: false } : arguments[0];
 
     var cfg = _extends({}, _config2.default, params);
 
@@ -58,17 +54,11 @@ var styles = function styles() {
     var dest = cfg.dest;
     var autoprefixerOptions = cfg.autoprefixerOptions;
     var pxToRemOptions = cfg.pxToRemOptions;
-
-    var _minimist = (0, _minimist3.default)(process.argv.slice(2));
-
-    var production = _minimist.production;
+    var cssnanoOptions = cfg.cssnanoOptions;
+    var production = cfg.production;
 
 
-    var processors = [(0, _autoprefixer2.default)(autoprefixerOptions), (0, _postcssPxtorem2.default)(pxToRemOptions)];
-
-    if (production) {
-        processors.push((0, _cssnano2.default)(cssnanoOptions));
-    }
+    var processors = [(0, _autoprefixer2.default)(autoprefixerOptions), (0, _postcssPxtorem2.default)(pxToRemOptions)].concat(production ? [(0, _cssnano2.default)(cssnanoOptions)] : []);
 
     var task = function task() {
         return _gulp2.default.src(src).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.init()).pipe((0, _gulpSass2.default)({

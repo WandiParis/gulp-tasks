@@ -8,10 +8,9 @@ import util from 'gulp-util'
 import autoprefixer from 'autoprefixer'
 import pxtorem from 'postcss-pxtorem'
 import cssnano from 'cssnano'
-import minimist from 'minimist'
 import config from './config'
 
-const styles = (params = {}) => {
+const styles = (params = {production: false}) => {
     const cfg = {
         ...config,
         ...params
@@ -21,19 +20,15 @@ const styles = (params = {}) => {
         src,
         dest,
         autoprefixerOptions,
-        pxToRemOptions
+        pxToRemOptions,
+        cssnanoOptions,
+        production
     } = cfg
-
-    const {production} = minimist(process.argv.slice(2))
 
     const processors = [
         autoprefixer(autoprefixerOptions),
         pxtorem(pxToRemOptions)
-    ]
-
-    if (production) {
-        processors.push(cssnano(cssnanoOptions))
-    }
+    ].concat(production ? [cssnano(cssnanoOptions)] : [])
 
     const task = () => {
         return gulp.src(src)
