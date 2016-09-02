@@ -21,6 +21,7 @@ const config = {
     cssnanoOptions: {
         autoprefixer: false,
         discardUnused: false,
+        discardComments: { removeAll: true },
         zindex: false,
         reduceIdents: false,
         mergeIdents: false

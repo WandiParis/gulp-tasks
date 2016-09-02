@@ -1,6 +1,6 @@
 # gulp-styles
 
-Tâche gulp pour compiler les styles
+Tâche gulp pour compiler les styles Sass.
 
 ## Installation
 
@@ -100,8 +100,21 @@ Valeur par défaut :
 {
     autoprefixer: false,
     discardUnused: false,
+    discardComments: { removeAll: true },
     zindex: false,
     reduceIdents: false,
     mergeIdents: false
 }
 ```
+
+### production
+
+Booléen. Valeur par défaut : `false`
+
+Ce paramètre indique à la tâche si elle doit appliquer tous les traitements
+nécessaires à optimiser le CSS en sortie. Ces traitements sont les suivants :
+
+* Pas de génération de sourcemaps
+* [Optimisations de cssnano](http://cssnano.co/optimisations/) qui ne sont pas
+explicitement désactivées (voir la configuration par défaut de cssnano, ou votre
+configuration)
