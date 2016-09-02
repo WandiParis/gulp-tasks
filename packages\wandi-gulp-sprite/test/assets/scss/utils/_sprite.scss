@@ -1,0 +1,195 @@
+/*
+SCSS variables are information about icon's compiled state, stored under its original file name
+
+.icon-home {
+  width: $icon-home-width;
+}
+
+The large array-like variables contain all information about a single icon
+$icon-home: x y offset_x offset_y width height total_width total_height image_path;
+
+At the bottom of this section, we provide information about the spritesheet itself
+$spritesheet: width height image $spritesheet-sprites;
+*/
+$hashtag1-name: 'hashtag1';
+$hashtag1-x: 0px;
+$hashtag1-y: 0px;
+$hashtag1-offset-x: 0px;
+$hashtag1-offset-y: 0px;
+$hashtag1-width: 80px;
+$hashtag1-height: 80px;
+$hashtag1-total-width: 320px;
+$hashtag1-total-height: 240px;
+$hashtag1-image: '../img/sprite.png';
+$hashtag1: (0px, 0px, 0px, 0px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag1', );
+$hashtag10-name: 'hashtag10';
+$hashtag10-x: 80px;
+$hashtag10-y: 0px;
+$hashtag10-offset-x: -80px;
+$hashtag10-offset-y: 0px;
+$hashtag10-width: 80px;
+$hashtag10-height: 80px;
+$hashtag10-total-width: 320px;
+$hashtag10-total-height: 240px;
+$hashtag10-image: '../img/sprite.png';
+$hashtag10: (80px, 0px, -80px, 0px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag10', );
+$hashtag2-name: 'hashtag2';
+$hashtag2-x: 0px;
+$hashtag2-y: 80px;
+$hashtag2-offset-x: 0px;
+$hashtag2-offset-y: -80px;
+$hashtag2-width: 80px;
+$hashtag2-height: 80px;
+$hashtag2-total-width: 320px;
+$hashtag2-total-height: 240px;
+$hashtag2-image: '../img/sprite.png';
+$hashtag2: (0px, 80px, 0px, -80px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag2', );
+$hashtag3-name: 'hashtag3';
+$hashtag3-x: 80px;
+$hashtag3-y: 80px;
+$hashtag3-offset-x: -80px;
+$hashtag3-offset-y: -80px;
+$hashtag3-width: 80px;
+$hashtag3-height: 80px;
+$hashtag3-total-width: 320px;
+$hashtag3-total-height: 240px;
+$hashtag3-image: '../img/sprite.png';
+$hashtag3: (80px, 80px, -80px, -80px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag3', );
+$hashtag4-name: 'hashtag4';
+$hashtag4-x: 160px;
+$hashtag4-y: 0px;
+$hashtag4-offset-x: -160px;
+$hashtag4-offset-y: 0px;
+$hashtag4-width: 80px;
+$hashtag4-height: 80px;
+$hashtag4-total-width: 320px;
+$hashtag4-total-height: 240px;
+$hashtag4-image: '../img/sprite.png';
+$hashtag4: (160px, 0px, -160px, 0px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag4', );
+$hashtag5-name: 'hashtag5';
+$hashtag5-x: 160px;
+$hashtag5-y: 80px;
+$hashtag5-offset-x: -160px;
+$hashtag5-offset-y: -80px;
+$hashtag5-width: 80px;
+$hashtag5-height: 80px;
+$hashtag5-total-width: 320px;
+$hashtag5-total-height: 240px;
+$hashtag5-image: '../img/sprite.png';
+$hashtag5: (160px, 80px, -160px, -80px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag5', );
+$hashtag6-name: 'hashtag6';
+$hashtag6-x: 0px;
+$hashtag6-y: 160px;
+$hashtag6-offset-x: 0px;
+$hashtag6-offset-y: -160px;
+$hashtag6-width: 80px;
+$hashtag6-height: 80px;
+$hashtag6-total-width: 320px;
+$hashtag6-total-height: 240px;
+$hashtag6-image: '../img/sprite.png';
+$hashtag6: (0px, 160px, 0px, -160px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag6', );
+$hashtag7-name: 'hashtag7';
+$hashtag7-x: 80px;
+$hashtag7-y: 160px;
+$hashtag7-offset-x: -80px;
+$hashtag7-offset-y: -160px;
+$hashtag7-width: 80px;
+$hashtag7-height: 80px;
+$hashtag7-total-width: 320px;
+$hashtag7-total-height: 240px;
+$hashtag7-image: '../img/sprite.png';
+$hashtag7: (80px, 160px, -80px, -160px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag7', );
+$hashtag8-name: 'hashtag8';
+$hashtag8-x: 160px;
+$hashtag8-y: 160px;
+$hashtag8-offset-x: -160px;
+$hashtag8-offset-y: -160px;
+$hashtag8-width: 80px;
+$hashtag8-height: 80px;
+$hashtag8-total-width: 320px;
+$hashtag8-total-height: 240px;
+$hashtag8-image: '../img/sprite.png';
+$hashtag8: (160px, 160px, -160px, -160px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag8', );
+$hashtag9-name: 'hashtag9';
+$hashtag9-x: 240px;
+$hashtag9-y: 0px;
+$hashtag9-offset-x: -240px;
+$hashtag9-offset-y: 0px;
+$hashtag9-width: 80px;
+$hashtag9-height: 80px;
+$hashtag9-total-width: 320px;
+$hashtag9-total-height: 240px;
+$hashtag9-image: '../img/sprite.png';
+$hashtag9: (240px, 0px, -240px, 0px, 80px, 80px, 320px, 240px, '../img/sprite.png', 'hashtag9', );
+$spritesheet-width: 320px;
+$spritesheet-height: 240px;
+$spritesheet-image: '../img/sprite.png';
+$spritesheet-sprites: ($hashtag1, $hashtag10, $hashtag2, $hashtag3, $hashtag4, $hashtag5, $hashtag6, $hashtag7, $hashtag8, $hashtag9, );
+$spritesheet: (320px, 240px, '../img/sprite.png', $spritesheet-sprites, );
+
+/*
+The provided mixins are intended to be used with the array-like variables
+
+.icon-home {
+  @include sprite-width($icon-home);
+}
+
+.icon-email {
+  @include sprite($icon-email);
+}
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 5);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 6);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 3);
+  $sprite-offset-y: nth($sprite, 4);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite-image($sprite) {
+  $sprite-image: nth($sprite, 9);
+  background-image: url(#{$sprite-image});
+}
+
+@mixin sprite($sprite) {
+  @include sprite-image($sprite);
+  @include sprite-position($sprite);
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+/*
+The `sprites` mixin generates identical output to the CSS template
+  but can be overridden inside of SCSS
+
+@include sprites($spritesheet-sprites);
+*/
+@mixin sprites($sprites) {
+  @each $sprite in $sprites {
+    $sprite-name: nth($sprite, 10);
+    .#{$sprite-name} {
+      @include sprite($sprite);
+    }
+  }
+}
