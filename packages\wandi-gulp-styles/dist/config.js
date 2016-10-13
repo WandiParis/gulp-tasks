@@ -24,6 +24,9 @@ var config = {
         zindex: false,
         reduceIdents: false,
         mergeIdents: false
+    },
+    sassOptions: {
+        outputStyle: 'nested'
     }
 };
 

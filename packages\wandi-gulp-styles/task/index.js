@@ -22,6 +22,7 @@ const styles = (params = {production: false}) => {
         autoprefixerOptions,
         pxToRemOptions,
         cssnanoOptions,
+        sassOptions,
         production
     } = cfg
 
@@ -33,9 +34,7 @@ const styles = (params = {production: false}) => {
     const task = () => {
         return gulp.src(src)
             .pipe(production ? util.noop() : sourcemaps.init())
-            .pipe(sass({
-                outputStyle: 'nested'
-            }).on('error', sass.logError))
+            .pipe(sass(sassOptions).on('error', sass.logError))
             .pipe(postcss(processors))
             .pipe(production ? util.noop() : sourcemaps.write())
             .pipe(gulp.dest(dest))

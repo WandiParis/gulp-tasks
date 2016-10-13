@@ -55,15 +55,14 @@ var styles = function styles() {
     var autoprefixerOptions = cfg.autoprefixerOptions;
     var pxToRemOptions = cfg.pxToRemOptions;
     var cssnanoOptions = cfg.cssnanoOptions;
+    var sassOptions = cfg.sassOptions;
     var production = cfg.production;
 
 
     var processors = [(0, _autoprefixer2.default)(autoprefixerOptions), (0, _postcssPxtorem2.default)(pxToRemOptions)].concat(production ? [(0, _cssnano2.default)(cssnanoOptions)] : []);
 
     var task = function task() {
-        return _gulp2.default.src(src).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.init()).pipe((0, _gulpSass2.default)({
-            outputStyle: 'nested'
-        }).on('error', _gulpSass2.default.logError)).pipe((0, _gulpPostcss2.default)(processors)).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.write()).pipe(_gulp2.default.dest(dest));
+        return _gulp2.default.src(src).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.init()).pipe((0, _gulpSass2.default)(sassOptions).on('error', _gulpSass2.default.logError)).pipe((0, _gulpPostcss2.default)(processors)).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.write()).pipe(_gulp2.default.dest(dest));
     };
 
     task.displayName = 'styles';
