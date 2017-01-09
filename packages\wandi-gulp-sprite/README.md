@@ -15,7 +15,7 @@ Paramètres par défaut :
 ```js
 // gulpfile.babel.js
 
-import sprite from gulp-sprite
+import sprite from 'gulp-sprite'
 
 const compile = sprite()
 
