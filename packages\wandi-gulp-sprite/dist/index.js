@@ -32,15 +32,15 @@ var _config2 = _interopRequireDefault(_config);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var sprite = function sprite() {
-    var params = arguments.length <= 0 || arguments[0] === undefined ? {} : arguments[0];
+    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
 
     var cfg = _extends({}, _config2.default, params);
 
-    var cssName = cfg.cssName;
-    var imgPath = cfg.imgPath;
-    var imgName = cfg.imgName;
-    var scssDest = cfg.scssDest;
-    var src = cfg.src;
+    var cssName = cfg.cssName,
+        imgPath = cfg.imgPath,
+        imgName = cfg.imgName,
+        scssDest = cfg.scssDest,
+        src = cfg.src;
 
 
     var task = function task() {
