@@ -15,7 +15,7 @@ Paramètres par défaut :
 ```js
 // gulpfile.babel.js
 
-import styles from gulp-styles
+import styles from 'gulp-styles'
 
 const compile = styles()
 
