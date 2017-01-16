@@ -9,6 +9,8 @@ Object.defineProperty(exports, "__esModule", {
 var config = {
     src: 'assets/scss/*.scss',
     dest: 'web/css',
+    lint: true,
+    lintSrc: 'assets/scss/**/*.scss',
     autoprefixerOptions: {
         browsers: ['last 2 versions', 'Firefox ESR', 'IE >= 9', 'BlackBerry >= 7', 'Android >= 2'],
         cascade: false,

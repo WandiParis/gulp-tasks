@@ -4,6 +4,8 @@
 const config = {
     src: 'assets/scss/*.scss',
     dest: 'web/css',
+    lint: true,
+    lintSrc: 'assets/scss/**/*.scss',
     autoprefixerOptions: {
         browsers: [
             'last 2 versions',

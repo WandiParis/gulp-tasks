@@ -39,11 +39,31 @@ var _cssnano = require('cssnano');
 
 var _cssnano2 = _interopRequireDefault(_cssnano);
 
+var _gulpStylelint = require('gulp-stylelint');
+
+var _gulpStylelint2 = _interopRequireDefault(_gulpStylelint);
+
 var _config = require('./config');
 
 var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var lint = function lint(src) {
+    var task = function task() {
+        return _gulp2.default.src(src).pipe((0, _gulpStylelint2.default)({
+            syntax: 'scss',
+            reporters: [{ formatter: 'string', console: true }]
+        })).on('error', function (err) {
+            return _gulpUtil2.default.log(err.message);
+        });
+    };
+
+    task.displayName = 'styles:lint';
+    task.description = 'Lint SCSS';
+
+    return task;
+};
 
 var styles = function styles() {
     var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { production: false };
@@ -52,6 +72,7 @@ var styles = function styles() {
 
     var src = cfg.src,
         dest = cfg.dest,
+        lintSrc = cfg.lintSrc,
         autoprefixerOptions = cfg.autoprefixerOptions,
         pxToRemOptions = cfg.pxToRemOptions,
         cssnanoOptions = cfg.cssnanoOptions,
@@ -68,7 +89,7 @@ var styles = function styles() {
     task.displayName = 'styles';
     task.description = 'Compile Sass / add prefixes to generated CSS';
 
-    return task;
+    return cfg.lint ? _gulp2.default.series(lint(src), task) : task;
 };
 
 exports.default = styles;
