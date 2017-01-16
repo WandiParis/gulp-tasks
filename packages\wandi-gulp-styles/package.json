@@ -25,7 +25,7 @@
     "gulp-sass": "^3.1.0",
     "gulp-sourcemaps": "^2.4.0",
     "gulp-util": "^3.0.7",
-    "postcss-pxtorem": "^3.3.1"
+    "postcss-pxtorem": "^4.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.11.4",
