@@ -1,6 +1,6 @@
 import styles from '../dist/index'
 
-const compile = styles({production: true})
+const compile = styles()
 
 export {
     compile

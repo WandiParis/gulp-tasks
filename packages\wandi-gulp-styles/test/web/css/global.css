@@ -1,1 +1,6 @@
-body{background-color:red}
+/*! i'm an important comment */
+body {
+  /* and i'm a classic comment */
+  background-color: #f00; }
+
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImdsb2JhbC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBLCtCQUErQjtBQUMvQjtFQUNJLCtCQUErQjtFQUMvQix1QkFMVyxFQU1kIiwiZmlsZSI6Imdsb2JhbC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkc29tZS12YXI6ICNmMDA7XHJcblxyXG4vKiEgaSdtIGFuIGltcG9ydGFudCBjb21tZW50ICovXHJcbmJvZHkge1xyXG4gICAgLyogYW5kIGknbSBhIGNsYXNzaWMgY29tbWVudCAqL1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogJHNvbWUtdmFyO1xyXG59XHJcbiJdfQ== */
