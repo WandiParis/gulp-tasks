@@ -46,17 +46,17 @@ var _config2 = _interopRequireDefault(_config);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var styles = function styles() {
-    var params = arguments.length <= 0 || arguments[0] === undefined ? { production: false } : arguments[0];
+    var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { production: false };
 
     var cfg = _extends({}, _config2.default, params);
 
-    var src = cfg.src;
-    var dest = cfg.dest;
-    var autoprefixerOptions = cfg.autoprefixerOptions;
-    var pxToRemOptions = cfg.pxToRemOptions;
-    var cssnanoOptions = cfg.cssnanoOptions;
-    var sassOptions = cfg.sassOptions;
-    var production = cfg.production;
+    var src = cfg.src,
+        dest = cfg.dest,
+        autoprefixerOptions = cfg.autoprefixerOptions,
+        pxToRemOptions = cfg.pxToRemOptions,
+        cssnanoOptions = cfg.cssnanoOptions,
+        sassOptions = cfg.sassOptions,
+        production = cfg.production;
 
 
     var processors = [(0, _autoprefixer2.default)(autoprefixerOptions), (0, _postcssPxtorem2.default)(pxToRemOptions)].concat(production ? [(0, _cssnano2.default)(cssnanoOptions)] : []);
