@@ -43,6 +43,10 @@ var _gulpStylelint = require('gulp-stylelint');
 
 var _gulpStylelint2 = _interopRequireDefault(_gulpStylelint);
 
+var _gulpPlumber = require('gulp-plumber');
+
+var _gulpPlumber2 = _interopRequireDefault(_gulpPlumber);
+
 var _config = require('./config');
 
 var _config2 = _interopRequireDefault(_config);
@@ -51,12 +55,10 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var lint = function lint(src) {
     var task = function task() {
-        return _gulp2.default.src(src).pipe((0, _gulpStylelint2.default)({
+        return _gulp2.default.src(src).pipe((0, _gulpPlumber2.default)()).pipe((0, _gulpStylelint2.default)({
             syntax: 'scss',
             reporters: [{ formatter: 'string', console: true }]
-        })).on('error', function (err) {
-            return _gulpUtil2.default.log(err.message);
-        });
+        }));
     };
 
     task.displayName = 'styles:lint';

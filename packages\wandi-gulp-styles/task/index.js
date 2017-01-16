@@ -9,18 +9,19 @@ import autoprefixer from 'autoprefixer'
 import pxtorem from 'postcss-pxtorem'
 import cssnano from 'cssnano'
 import stylelint from 'gulp-stylelint'
+import plumber from 'gulp-plumber'
 import config from './config'
 
 const lint = (src) => {
     const task = () =>
         gulp.src(src)
+            .pipe(plumber())
             .pipe(stylelint({
                 syntax: 'scss',
                 reporters: [
                     {formatter: 'string', console: true}
                 ]
             }))
-            .on('error', (err) => util.log(err.message))
 
     task.displayName = 'styles:lint'
     task.description = 'Lint SCSS'
