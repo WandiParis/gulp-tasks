@@ -5,7 +5,7 @@ Tâche gulp pour compiler les styles Sass.
 ## Installation
 
 ```
-npm install --save-dev "github:wandiparis/gulp-styles"
+npm install --save-dev wandi-gulp-styles
 ```
 
 ## Utilisation
@@ -15,7 +15,7 @@ Paramètres par défaut :
 ```js
 // gulpfile.babel.js
 
-import styles from 'gulp-styles'
+import styles from 'wandi-gulp-styles'
 
 const compile = styles()
 
