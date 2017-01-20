@@ -118,3 +118,18 @@ nécessaires à optimiser le CSS en sortie. Ces traitements sont les suivants :
 * [Optimisations de cssnano](http://cssnano.co/optimisations/) qui ne sont pas
 explicitement désactivées (voir la configuration par défaut de cssnano, ou votre
 configuration)
+
+### lint
+
+Booléen. Valeur par défaut : `true`
+
+Active le linting à l'aide de [StyleLint](http://stylelint.io/). Lorsque le
+linting est activé, vous devez avoir un fichier de configuration StyleLint à la
+racine du projet. Le plus simple est d'extend
+[stylelint-config-wandi](https://github.com/WandiParis/stylelint-config-wandi).
+
+### lintSrc
+
+Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
+
+Valeur par défaut : `'assets/scss/**/*.scss'`
