@@ -1,7 +1,3 @@
-const config = {
-    "rules": {
-        "indentation": 4
-    }
-}
-
-module.exports = config
+module.exports = {
+    extends: "stylelint-config-wandi"
+};
