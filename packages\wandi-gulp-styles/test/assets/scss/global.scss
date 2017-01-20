@@ -1,3 +1,5 @@
+@import "partial";
+
 $some-var: #f00;
 
 /*! i'm an important comment */
@@ -6,4 +8,5 @@ body {
     /* and i'm a classic comment */
 
     background-color: $some-var;
+    color: #fff;
 }

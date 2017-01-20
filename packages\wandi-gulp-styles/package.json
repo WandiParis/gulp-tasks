@@ -5,7 +5,8 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "babel task -d dist",
-    "test": "gulp compile --gulpfile ./test/gulpfile.babel.js"
+    "test": "gulp compile --gulpfile ./test/gulpfile.babel.js",
+    "test:watch": "gulp watch --gulpfile ./test/gulpfile.babel.js"
   },
   "repository": {
     "type": "git",

@@ -12,58 +12,55 @@ import stylelint from 'gulp-stylelint'
 import plumber from 'gulp-plumber'
 import config from './config'
 
-const lint = (src) => {
-    const task = () =>
-        gulp.src(src)
-            .pipe(plumber())
-            .pipe(stylelint({
-                syntax: 'scss',
-                reporters: [
-                    {formatter: 'string', console: true}
-                ]
-            }))
-
-    task.displayName = 'styles:lint'
-    task.description = 'Lint SCSS'
-
-    return task
-}
-
 const styles = (params = {production: false}) => {
     const cfg = {
         ...config,
-        ...params
+        ...params,
     }
 
     const {
         src,
         dest,
-        lintSrc,
+        lint,
         autoprefixerOptions,
         pxToRemOptions,
         cssnanoOptions,
         sassOptions,
-        production
+        production,
     } = cfg
 
     const processors = [
         autoprefixer(autoprefixerOptions),
-        pxtorem(pxToRemOptions)
+        pxtorem(pxToRemOptions),
     ].concat(production ? [cssnano(cssnanoOptions)] : [])
 
     const task = () => {
-        return gulp.src(src)
-            .pipe(production ? util.noop() : sourcemaps.init())
+        const stream = gulp.src(src)
+            .pipe(plumber());
+        
+        if (lint) {
+            stream.pipe(stylelint({
+                syntax: 'scss',
+                reporters: [{
+                    formatter: 'string',
+                    console: true,
+                }]
+            }))
+        }
+        
+        stream.pipe(production ? util.noop() : sourcemaps.init())
             .pipe(sass(sassOptions).on('error', sass.logError))
             .pipe(postcss(processors))
             .pipe(production ? util.noop() : sourcemaps.write())
             .pipe(gulp.dest(dest))
+            
+        return stream
     }
 
     task.displayName = 'styles'
     task.description = 'Compile Sass / add prefixes to generated CSS'
 
-    return cfg.lint ? gulp.series(lint(src), task) : task
+    return task
 }
 
 export default styles

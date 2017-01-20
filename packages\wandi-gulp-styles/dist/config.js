@@ -7,7 +7,7 @@ Object.defineProperty(exports, "__esModule", {
 /*eslint camelcase: 0 */
 
 var config = {
-    src: 'assets/scss/*.scss',
+    src: 'assets/scss/**/*.scss',
     dest: 'web/css',
     lint: true,
     lintSrc: 'assets/scss/**/*.scss',

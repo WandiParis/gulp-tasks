@@ -55,10 +55,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var lint = function lint(src) {
     var task = function task() {
-        return _gulp2.default.src(src).pipe((0, _gulpPlumber2.default)()).pipe((0, _gulpStylelint2.default)({
+        return _gulp2.default.src(src)
+        // .pipe(plumber())
+        .pipe((0, _gulpStylelint2.default)({
             syntax: 'scss',
             reporters: [{ formatter: 'string', console: true }]
-        }));
+        })).on('error', function () {
+            return undefined.emit('end');
+        });
     };
 
     task.displayName = 'styles:lint';
@@ -85,13 +89,24 @@ var styles = function styles() {
     var processors = [(0, _autoprefixer2.default)(autoprefixerOptions), (0, _postcssPxtorem2.default)(pxToRemOptions)].concat(production ? [(0, _cssnano2.default)(cssnanoOptions)] : []);
 
     var task = function task() {
-        return _gulp2.default.src(src).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.init()).pipe((0, _gulpSass2.default)(sassOptions).on('error', _gulpSass2.default.logError)).pipe((0, _gulpPostcss2.default)(processors)).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.write()).pipe(_gulp2.default.dest(dest));
+        var stream = _gulp2.default.src(src).pipe((0, _gulpPlumber2.default)());
+
+        if (cfg.lint) {
+            stream.pipe((0, _gulpStylelint2.default)({
+                syntax: 'scss',
+                reporters: [{ formatter: 'string', console: true }]
+            }));
+        }
+
+        stream.pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.init()).pipe((0, _gulpSass2.default)(sassOptions).on('error', _gulpSass2.default.logError)).pipe((0, _gulpPostcss2.default)(processors)).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.write()).pipe(_gulp2.default.dest(dest));
+
+        return stream;
     };
 
     task.displayName = 'styles';
     task.description = 'Compile Sass / add prefixes to generated CSS';
 
-    return cfg.lint ? _gulp2.default.series(lint(src), task) : task;
+    return task;
 };
 
 exports.default = styles;

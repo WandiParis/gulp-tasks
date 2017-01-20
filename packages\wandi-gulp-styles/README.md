@@ -47,7 +47,7 @@ export {
 
 Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
-Valeur par défaut : `'assets/scss/*.scss'`
+Valeur par défaut : `'assets/scss/**/*.scss'`
 
 ### dest
 
@@ -128,8 +128,6 @@ linting est activé, vous devez avoir un fichier de configuration StyleLint à l
 racine du projet. Le plus simple est d'extend
 [stylelint-config-wandi](https://github.com/WandiParis/stylelint-config-wandi).
 
-### lintSrc
-
-Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
-
-Valeur par défaut : `'assets/scss/**/*.scss'`
+Le linting arrête l'exécution de la tâche lorsqu'une erreur est levée. Si un
+avertissement est soulevé, celui-ci s'affiche uniquement en console, sans
+arrêter l'exécution de la tâche.
