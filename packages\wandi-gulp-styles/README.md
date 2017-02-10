@@ -107,6 +107,18 @@ Valeur par défaut :
 }
 ```
 
+### sassOptions
+
+Un objet de configuration passé à [node-sass](https://github.com/sass/node-sass).
+Voir les [options de node-sass](https://github.com/sass/node-sass#options).
+
+Valeur par défaut :
+```js
+{
+    outputStyle: "nested"
+}
+```
+
 ### production
 
 Booléen. Valeur par défaut : `false`
