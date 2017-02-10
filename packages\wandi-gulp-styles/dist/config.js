@@ -1,24 +1,20 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-/*eslint-env node */
 /*eslint camelcase: 0 */
 
 var config = {
-    src: 'assets/scss/**/*.scss',
-    dest: 'web/css',
+    src: "assets/scss/**/*.scss",
+    dest: "web/css",
     lint: true,
-    lintSrc: 'assets/scss/**/*.scss',
     autoprefixerOptions: {
-        browsers: ['last 2 versions', 'Firefox ESR', 'IE >= 9', 'BlackBerry >= 7', 'Android >= 2'],
+        browsers: ["last 2 versions", "Firefox ESR", "IE >= 9", "BlackBerry >= 7", "Android >= 2"],
         cascade: false,
         remove: false
     },
-    pxToRemOptions: {
-        root_value: 16
-    },
+    pxToRemOptions: { root_value: 16 },
     cssnanoOptions: {
         autoprefixer: false,
         discardUnused: false,
@@ -27,9 +23,7 @@ var config = {
         reduceIdents: false,
         mergeIdents: false
     },
-    sassOptions: {
-        outputStyle: 'nested'
-    }
+    sassOptions: { outputStyle: "nested" }
 };
 
 exports.default = config;

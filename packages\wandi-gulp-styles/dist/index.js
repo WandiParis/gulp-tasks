@@ -1,75 +1,57 @@
-'use strict';
+"use strict";
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports.styles = undefined;
 
-var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; /*eslint-env node */
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
-var _gulp = require('gulp');
+var _gulp = require("gulp");
 
 var _gulp2 = _interopRequireDefault(_gulp);
 
-var _gulpSass = require('gulp-sass');
+var _gulpSass = require("gulp-sass");
 
 var _gulpSass2 = _interopRequireDefault(_gulpSass);
 
-var _gulpSourcemaps = require('gulp-sourcemaps');
+var _gulpSourcemaps = require("gulp-sourcemaps");
 
 var _gulpSourcemaps2 = _interopRequireDefault(_gulpSourcemaps);
 
-var _gulpPostcss = require('gulp-postcss');
+var _gulpPostcss = require("gulp-postcss");
 
 var _gulpPostcss2 = _interopRequireDefault(_gulpPostcss);
 
-var _gulpUtil = require('gulp-util');
+var _gulpUtil = require("gulp-util");
 
 var _gulpUtil2 = _interopRequireDefault(_gulpUtil);
 
-var _autoprefixer = require('autoprefixer');
+var _autoprefixer = require("autoprefixer");
 
 var _autoprefixer2 = _interopRequireDefault(_autoprefixer);
 
-var _postcssPxtorem = require('postcss-pxtorem');
+var _postcssPxtorem = require("postcss-pxtorem");
 
 var _postcssPxtorem2 = _interopRequireDefault(_postcssPxtorem);
 
-var _cssnano = require('cssnano');
+var _cssnano = require("cssnano");
 
 var _cssnano2 = _interopRequireDefault(_cssnano);
 
-var _gulpStylelint = require('gulp-stylelint');
+var _gulpStylelint = require("gulp-stylelint");
 
 var _gulpStylelint2 = _interopRequireDefault(_gulpStylelint);
 
-var _gulpPlumber = require('gulp-plumber');
+var _gulpPlumber = require("gulp-plumber");
 
 var _gulpPlumber2 = _interopRequireDefault(_gulpPlumber);
 
-var _config = require('./config');
+var _config = require("./config");
 
 var _config2 = _interopRequireDefault(_config);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var lint = function lint(src) {
-    var task = function task() {
-        return _gulp2.default.src(src)
-        // .pipe(plumber())
-        .pipe((0, _gulpStylelint2.default)({
-            syntax: 'scss',
-            reporters: [{ formatter: 'string', console: true }]
-        })).on('error', function () {
-            return undefined.emit('end');
-        });
-    };
-
-    task.displayName = 'styles:lint';
-    task.description = 'Lint SCSS';
-
-    return task;
-};
 
 var styles = function styles() {
     var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : { production: false };
@@ -78,7 +60,7 @@ var styles = function styles() {
 
     var src = cfg.src,
         dest = cfg.dest,
-        lintSrc = cfg.lintSrc,
+        lint = cfg.lint,
         autoprefixerOptions = cfg.autoprefixerOptions,
         pxToRemOptions = cfg.pxToRemOptions,
         cssnanoOptions = cfg.cssnanoOptions,
@@ -91,20 +73,23 @@ var styles = function styles() {
     var task = function task() {
         var stream = _gulp2.default.src(src).pipe((0, _gulpPlumber2.default)());
 
-        if (cfg.lint) {
+        if (lint) {
             stream.pipe((0, _gulpStylelint2.default)({
-                syntax: 'scss',
-                reporters: [{ formatter: 'string', console: true }]
+                syntax: "scss",
+                reporters: [{
+                    formatter: "string",
+                    console: true
+                }]
             }));
         }
 
-        stream.pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.init()).pipe((0, _gulpSass2.default)(sassOptions).on('error', _gulpSass2.default.logError)).pipe((0, _gulpPostcss2.default)(processors)).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.write()).pipe(_gulp2.default.dest(dest));
+        stream.pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.init()).pipe((0, _gulpSass2.default)(sassOptions).on("error", _gulpSass2.default.logError)).pipe((0, _gulpPostcss2.default)(processors)).pipe(production ? _gulpUtil2.default.noop() : _gulpSourcemaps2.default.write()).pipe(_gulp2.default.dest(dest));
 
         return stream;
     };
 
-    task.displayName = 'styles';
-    task.description = 'Compile Sass / add prefixes to generated CSS';
+    task.displayName = "styles";
+    task.description = "Compile Sass / add prefixes to generated CSS";
 
     return task;
 };
