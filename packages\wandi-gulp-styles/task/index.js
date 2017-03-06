@@ -1,20 +1,17 @@
-import gulp from "gulp";
-import sass from "gulp-sass";
-import sourcemaps from "gulp-sourcemaps";
-import postcss from "gulp-postcss";
-import util from "gulp-util";
-import autoprefixer from "autoprefixer";
-import pxtorem from "postcss-pxtorem";
-import cssnano from "cssnano";
-import stylelint from "gulp-stylelint";
-import plumber from "gulp-plumber";
-import config from "./config";
+const gulp = require("gulp");
+const sass = require("gulp-sass");
+const sourcemaps = require("gulp-sourcemaps");
+const postcss = require("gulp-postcss");
+const util = require("gulp-util");
+const autoprefixer = require("autoprefixer");
+const pxtorem = require("postcss-pxtorem");
+const cssnano = require("cssnano");
+const stylelint = require("gulp-stylelint");
+const plumber = require("gulp-plumber");
+const config = require("./config");
 
 const styles = (params = { production: false }) => {
-    const cfg = {
-        ...config,
-        ...params,
-    };
+    const cfg = Object.assign({}, config, params);
 
     const {
         src,
@@ -61,7 +58,4 @@ const styles = (params = { production: false }) => {
     return task;
 };
 
-export default styles;
-export {
-    styles,
-};
+module.exports = styles;

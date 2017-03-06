@@ -27,4 +27,4 @@ const config = {
     sassOptions: { outputStyle: "nested" },
 };
 
-export default config;
+module.exports = config;

@@ -4,10 +4,9 @@
   "description": "Compile Sass / add prefixes to generated CSS",
   "main": "dist/index.js",
   "scripts": {
-    "build": "npm run lint && babel task -d dist",
     "lint": "eslint --fix \"task/*\"",
-    "test": "gulp compile --gulpfile ./test/gulpfile.babel.js",
-    "test:watch": "gulp watch --gulpfile ./test/gulpfile.babel.js"
+    "test": "npm run lint && gulp compile --gulpfile ./test/gulpfile.js",
+    "test:watch": "gulp watch --gulpfile ./test/gulpfile.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +36,6 @@
     "babel-preset-stage-2": "^6.11.0",
     "eslint": "^3.15.0",
     "eslint-config-wandi": "^1.1.1",
-    "stylelint-config-wandi": "^1.0.2"
+    "stylelint-config-wandi": "^1.1.1"
   }
 }
