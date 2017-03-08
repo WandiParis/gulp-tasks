@@ -1,7 +1,7 @@
 /*eslint camelcase: 0 */
 
 const config = {
-    src: "assets/scss/**/*.scss",
+    src: "assets/scss/*.scss",
     dest: "web/css",
     lint: true,
     autoprefixerOptions: {
