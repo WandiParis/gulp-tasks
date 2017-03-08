@@ -47,7 +47,7 @@ export {
 
 Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
-Valeur par défaut : `'assets/scss/**/*.scss'`
+Valeur par défaut : `'assets/scss/*.scss'`
 
 ### dest
 
