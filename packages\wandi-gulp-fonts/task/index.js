@@ -1,15 +1,12 @@
 /*eslint-env node */
 
-import gulp from 'gulp'
-import newer from 'gulp-newer'
-import fontmin from 'gulp-fontmin'
-import config from './config'
+const gulp = require('gulp');
+const newer = require('gulp-newer');
+const fontmin = require('gulp-fontmin');
+const config = require('./config');
 
 const task = (params = {}) => {
-    const cfg = {
-        ...config,
-        ...params
-    }
+    const cfg = Object.assign({}, config, params);
 
     const {
         src,
@@ -29,7 +26,4 @@ const task = (params = {}) => {
     return fonts
 }
 
-export default task
-export {
-    task as fonts
-}
+module.exports = task;

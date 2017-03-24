@@ -5,4 +5,4 @@ const config = {
     dest: 'web/fonts'
 }
 
-export default config
+module.exports = config;
