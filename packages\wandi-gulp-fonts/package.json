@@ -1,5 +1,5 @@
 {
-  "name": "gulp-fonts",
+  "name": "wandi-gulp-fonts",
   "version": "0.0.1",
   "description": "",
   "main": "task/index.js",

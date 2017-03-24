@@ -5,7 +5,7 @@ Tâche gulp pour convertir et compresser des fonts
 ## Installation
 
 ```
-npm install --save-dev "github:wandiparis/gulp-fonts"
+npm install --save-dev wandi-gulp-fonts
 ```
 
 ## Utilisation
@@ -13,32 +13,32 @@ npm install --save-dev "github:wandiparis/gulp-fonts"
 Paramètres par défaut :
 
 ```js
-// gulpfile.babel.js
+// gulpfile.js
 
-import fonts from 'gulp-fonts'
+const fonts = require("gulp-fonts");
 
-const compile = fonts()
+const compile = fonts();
 
-export {
+module.exports = {
     compile
-}
+};
 ```
 
 Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
 
 ```js
-// gulpfile.babel.js
+// gulpfile.js
 
-import images from 'gulp-fonts'
+const fonts = require("gulp-fonts");
 
 const compile = fonts({
-    src: 'path/to/fonts/**/*',
-    dest: 'path/to/dest'
-})
+    src: "path/to/fonts/**/*",
+    dest: "path/to/dest",
+});
 
-export {
+module.exports = {
     compile
-}
+};
 ```
 
 ## Paramètres
@@ -47,10 +47,10 @@ export {
 
 Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
-Valeur par défaut : `'assets/fonts/**/*'`
+Valeur par défaut : `"assets/fonts/**/*"`
 
 ### dest
 
 Voir [le paramètre `path` de `gulp.dest`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
 
-Valeur par défaut : `'web/fonts'`
+Valeur par défaut : `"web/fonts"`
