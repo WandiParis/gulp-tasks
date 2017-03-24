@@ -4,6 +4,8 @@
   "description": "",
   "main": "task/index.js",
   "scripts": {
+    "lint": "eslint --fix \"task/*\"",
+    "pretest": "npm run lint",
     "test": "gulp compile --gulpfile ./test/gulpfile.js"
   },
   "repository": {
@@ -21,5 +23,8 @@
     "gulp-fontmin": "^0.7.4",
     "gulp-newer": "^1.2.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "eslint": "^3.18.0",
+    "eslint-config-wandi": "^1.2.0"
+  }
 }
