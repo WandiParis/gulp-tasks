@@ -1,49 +1,43 @@
-import gulp from 'gulp'
-import spritesmith from 'gulp.spritesmith'
-import replace from 'gulp-replace'
-import merge from 'merge-stream'
-import {sync as rm} from 'rimraf'
-import config from './config'
+const gulp = require("gulp");
+const spritesmith = require("gulp.spritesmith");
+const replace = require("gulp-replace");
+const merge = require("merge-stream");
+const { sync: rm } = require("rimraf");
+const config = require("./config");
 
 const sprite = (params = {}) => {
-    const cfg = {
-        ...config,
-        ...params
-    }
+    const cfg = Object.assign({}, config, params);
 
     const {
         cssName,
         imgPath,
         imgName,
         scssDest,
-        src
-    } = cfg
+        src,
+    } = cfg;
 
     const task = () => {
-        rm(`${imgPath}/${imgName}`)
+        rm(`${imgPath}/${imgName}`);
 
         const spriteStreams = gulp.src(src)
             .pipe(spritesmith({
                 imgName,
-                cssName
-            }))
+                cssName,
+            }));
 
-            spriteStreams.img.pipe(gulp.dest(imgPath))
+        spriteStreams.img.pipe(gulp.dest(imgPath));
 
-            spriteStreams.css
+        spriteStreams.css
                 .pipe(replace(`'${imgName}'`, `'../img/${imgName}'`))
-                .pipe(gulp.dest(scssDest))
+                .pipe(gulp.dest(scssDest));
 
-            return merge(spriteStreams.img, spriteStreams.css)
-    }
+        return merge(spriteStreams.img, spriteStreams.css);
+    };
 
-    task.displayName = 'sprite'
-    task.description = 'Merge icons into a sprite file and generate SCSS code to use it'
+    task.displayName = "sprite";
+    task.description = "Merge icons into a sprite file and generate SCSS code to use it";
 
-    return task
-}
+    return task;
+};
 
-export default sprite
-export {
-    sprite
-}
+module.exports = sprite;
