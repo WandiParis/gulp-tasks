@@ -5,7 +5,7 @@ Génère un sprite à partir d'un dossier d'icônes PNG.
 ## Installation
 
 ```
-npm install --save-dev wandi-gulp-sprite
+npm install --save-dev @wandiparis/gulp-sprite
 ```
 
 ## Utilisation
@@ -15,7 +15,7 @@ Paramètres par défaut :
 ```js
 // gulpfile.js
 
-const sprite = require("gulp-sprite");
+const sprite = require("@wandiparis/gulp-sprite");
 
 const compile = sprite();
 
@@ -29,7 +29,7 @@ Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
 ```js
 // gulpfile.js
 
-const sprite = require("gulp-sprite");
+const sprite = require("@wandiparis/gulp-sprite");
 
 const compile = styles({
     cssName: "my_sprite.scss",
