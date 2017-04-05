@@ -1,6 +1,6 @@
 {
   "name": "@wandiparis/gulp-sprite",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Generate a sprite from a set of PNG icon files",
   "main": "task/index.js",
   "scripts": {
