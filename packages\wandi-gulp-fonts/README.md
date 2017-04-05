@@ -5,7 +5,7 @@ Tâche gulp pour convertir et compresser des fonts
 ## Installation
 
 ```
-npm install --save-dev wandi-gulp-fonts
+npm install --save-dev @wandiparis/gulp-fonts
 ```
 
 ## Utilisation
@@ -15,7 +15,7 @@ Paramètres par défaut :
 ```js
 // gulpfile.js
 
-const fonts = require("gulp-fonts");
+const fonts = require("@wandiparis/gulp-fonts");
 
 const compile = fonts();
 
@@ -29,7 +29,7 @@ Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
 ```js
 // gulpfile.js
 
-const fonts = require("gulp-fonts");
+const fonts = require("@wandiparis/gulp-fonts");
 
 const compile = fonts({
     src: "path/to/fonts/**/*",
