@@ -1,6 +1,6 @@
 module.exports = {
-    extends: "wandi",
-    env: {
-        node: true
-    }
+  extends: "wandi",
+  env: {
+    node: true
+  }
 };
