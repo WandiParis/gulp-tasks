@@ -1,5 +1,5 @@
 module.exports = {
-  extends: ["wandi", "prettier"],
+  extends: ["@wandiparis/eslint-config-wandi", "prettier"],
   env: {
     node: true
   }

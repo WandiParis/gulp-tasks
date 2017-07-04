@@ -31,9 +31,10 @@
     "postcss-pxtorem": "^4.0.1"
   },
   "devDependencies": {
-    "eslint": "^3.17.1",
+    "@wandiparis/eslint-config-wandi": "^2.0.0-alpha.0",
+    "eslint": "^4.1.1",
     "eslint-config-prettier": "^2.3.0",
-    "eslint-config-wandi": "^1.1.1",
+    "eslint-plugin-import": "^2.6.1",
     "husky": "^0.14.2",
     "lint-staged": "^4.0.0",
     "prettier": "^1.5.2",
