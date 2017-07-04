@@ -6,38 +6,34 @@ const { sync: rm } = require("rimraf");
 const config = require("./config");
 
 const sprite = (params = {}) => {
-    const cfg = Object.assign({}, config, params);
+  const cfg = Object.assign({}, config, params);
 
-    const {
-        cssName,
-        imgPath,
+  const { cssName, imgPath, imgName, scssDest, src } = cfg;
+
+  const task = () => {
+    rm(`${imgPath}/${imgName}`);
+
+    const spriteStreams = gulp.src(src).pipe(
+      spritesmith({
         imgName,
-        scssDest,
-        src,
-    } = cfg;
+        cssName
+      })
+    );
 
-    const task = () => {
-        rm(`${imgPath}/${imgName}`);
+    spriteStreams.img.pipe(gulp.dest(imgPath));
 
-        const spriteStreams = gulp.src(src)
-            .pipe(spritesmith({
-                imgName,
-                cssName,
-            }));
+    spriteStreams.css
+      .pipe(replace(`'${imgName}'`, `'../img/${imgName}'`))
+      .pipe(gulp.dest(scssDest));
 
-        spriteStreams.img.pipe(gulp.dest(imgPath));
+    return merge(spriteStreams.img, spriteStreams.css);
+  };
 
-        spriteStreams.css
-                .pipe(replace(`'${imgName}'`, `'../img/${imgName}'`))
-                .pipe(gulp.dest(scssDest));
+  task.displayName = "sprite";
+  task.description =
+    "Merge icons into a sprite file and generate SCSS code to use it";
 
-        return merge(spriteStreams.img, spriteStreams.css);
-    };
-
-    task.displayName = "sprite";
-    task.description = "Merge icons into a sprite file and generate SCSS code to use it";
-
-    return task;
+  return task;
 };
 
 module.exports = sprite;
