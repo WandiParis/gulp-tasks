@@ -23,8 +23,10 @@
     "gulp-newer": "^1.2.0"
   },
   "devDependencies": {
-    "eslint": "^3.18.0",
-    "eslint-config-wandi": "^1.2.0",
+    "@wandiparis/eslint-config-wandi": "^2.0.0-alpha.0",
+    "eslint": "^4.1.1",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-import": "^2.6.1",
     "husky": "^0.14.2",
     "lint-staged": "^4.0.0",
     "prettier": "^1.5.2"
