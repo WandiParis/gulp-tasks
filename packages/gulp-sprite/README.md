@@ -1,6 +1,6 @@
 # gulp-sprite
 
-Génère un sprite à partir d'un dossier d'icônes PNG.
+Gulp task that generates a sprite from a PNG icons directory.
 
 ## Installation
 
@@ -8,9 +8,9 @@ Génère un sprite à partir d'un dossier d'icônes PNG.
 npm install --save-dev @wandiparis/gulp-sprite
 ```
 
-## Utilisation
+## Usage
 
-Paramètres par défaut :
+Use with default parameters :
 
 ```js
 // gulpfile.js
@@ -24,7 +24,7 @@ module.exports = {
 };
 ```
 
-Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
+Use with custom parameters (see below for the full list) :
 
 ```js
 // gulpfile.js
@@ -41,34 +41,34 @@ module.exports = {
 };
 ```
 
-## Paramètres
+## Parameters
 
 ### cssName
 
-Nom du fichier de style généré.
+The name of the generated stylesheet.
 
-Valeur par défaut : `'_sprite.scss'`
+Default value : `'_sprite.scss'`
 
 ### imgPath
 
-Chemin du dossier dans lequel l'image générée sera écrite.
+The path of the directory where to put the generated sprite image.
 
-Valeur par défaut : `'assets/img'`
+Default value : `'assets/img'`
 
 ### imgName
 
-Nom du fichier de l'image générée.
+The name of the generated sprite image.
 
-Valeur par défaut : `'sprite.png'`
+Default value : `'sprite.png'`
 
 ### dest
 
-Voir [le paramètre `path` de `gulp.dest`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
+See [`gulp.dest` `path` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
 
-Valeur par défaut : `'assets/scss/utils'`
+Default value : `'assets/scss/utils'`
 
 ### src
 
-Chemin des images sources. Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
+See [`gulp.src` `globs` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
-Valeur par défaut : `'assets/img/icons/*.png'`
+Default value : `'assets/img/icons/*.png'`

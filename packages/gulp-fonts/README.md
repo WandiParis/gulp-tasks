@@ -1,6 +1,6 @@
 # gulp-fonts
 
-Tâche gulp pour convertir et compresser des fonts
+Gulp task that converts and optimizes fonts
 
 ## Installation
 
@@ -8,9 +8,9 @@ Tâche gulp pour convertir et compresser des fonts
 npm install --save-dev @wandiparis/gulp-fonts
 ```
 
-## Utilisation
+## Usage
 
-Paramètres par défaut :
+Use with default parameters :
 
 ```js
 // gulpfile.js
@@ -24,7 +24,7 @@ module.exports = {
 };
 ```
 
-Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
+Use with custom parameters (see below for the full list) :
 
 ```js
 // gulpfile.js
@@ -41,16 +41,16 @@ module.exports = {
 };
 ```
 
-## Paramètres
+## Parameters
 
 ### src
 
-Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
+See [`gulp.src` `globs` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
-Valeur par défaut : `"assets/fonts/**/*"`
+Default value : `"assets/fonts/**/*"`
 
 ### dest
 
-Voir [le paramètre `path` de `gulp.dest`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
+See [`gulp.dest` `path` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
 
-Valeur par défaut : `"web/fonts"`
+Default value : `"web/fonts"`

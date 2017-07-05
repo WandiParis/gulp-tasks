@@ -1,6 +1,6 @@
 # gulp-images
 
-Tâche gulp de compression d'images
+Gulp task that optimizes images
 
 ## Installation
 
@@ -8,9 +8,9 @@ Tâche gulp de compression d'images
 npm install --save-dev @wandiparis/gulp-images
 ```
 
-## Utilisation
+## Usage
 
-Paramètres par défaut :
+Use with default parameters :
 
 ```js
 // gulpfile.js
@@ -24,7 +24,7 @@ module.exports = {
 };
 ```
 
-Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
+Use with custom parameters (see below for the full list) :
 
 ```js
 // gulpfile.js
@@ -41,25 +41,25 @@ module.exports = {
 };
 ```
 
-## Paramètres
+## Parameters
 
 ### src
 
-Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
+See [`gulp.src` `globs` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
-Valeur par défaut : `'assets/img/**/*.{jpg,png,gif,svg}'`
+Default value : `'assets/img/**/*.{jpg,png,gif,svg}'`
 
 ### dest
 
-Voir [le paramètre `path` de `gulp.dest`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
+See [`gulp.dest` `path` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
 
-Valeur par défaut : `'web/img'`
+Default value : `'web/img'`
 
 ### jpg
 
-Voir [les options de imagemin-mozjpeg](https://github.com/imagemin/imagemin-mozjpeg#options)
+See [imagemin-mozjpeg options](https://github.com/imagemin/imagemin-mozjpeg#options)
 
-Valeur par défaut :
+Default value :
 
 ```js
 {
@@ -69,21 +69,21 @@ Valeur par défaut :
 
 ### png
 
-Voir [les options de imagemin-pngquant](https://github.com/imagemin/imagemin-mozjpeg#options)
+See [imagemin-pngquant options](https://github.com/imagemin/imagemin-mozjpeg#options)
 
-Valeur par défaut : `{}`
+Default value : `{}`
 
 ### gif
 
-Voir [les options de imagemin-gifsicle](https://github.com/imagemin/imagemin-gifsicle#options)
+See [imagemin-gifsicle options](https://github.com/imagemin/imagemin-gifsicle#options)
 
-Valeur par défaut : `{}`
+Default value : `{}`
 
 ### svg
 
-Voir [les options de imagemin-svgo](https://github.com/imagemin/imagemin-svgo#options)
+See [imagemin-svgo options](https://github.com/imagemin/imagemin-svgo#options)
 
-Valeur par défaut :
+Default value :
 
 ```js
 {

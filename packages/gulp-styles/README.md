@@ -1,66 +1,65 @@
 # gulp-styles
 
-Tâche gulp pour compiler les styles Sass.
+Gulp task that compiles SCSS files.
 
 ## Installation
 
 ```
-npm install --save-dev wandi-gulp-styles
+npm install --save-dev @wandiparis/gulp-styles
 ```
 
-## Utilisation
+## Usage
 
-Paramètres par défaut :
+Default parameters :
 
 ```js
-// gulpfile.babel.js
+// gulpfile.js
 
-import styles from 'wandi-gulp-styles'
+const styles = require("@wandiparis/gulp-styles");
 
-const compile = styles()
+const compile = styles();
 
 export {
     compile
-}
+};
 ```
 
-Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
+Custom parameters (see below for the full list) :
 
 ```js
-// gulpfile.babel.js
+// gulpfile.js
 
-import styles from gulp-styles
+const styles = require("@wandiparis/gulp-styles");
 
 const compile = styles({
-    src: 'path/to/scss/global.scss',
-    dest: 'path/to/dest'
-})
+    src: "path/to/scss/global.scss",
+    dest: "path/to/dest"
+});
 
 export {
     compile
-}
+};
 ```
 
-## Paramètres
+## Parameters
 
 ### src
 
-Voir [le paramètre `globs` de `gulp.src`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
+See [`gulp.src` `globs` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#globs).
 
-Valeur par défaut : `'assets/scss/*.scss'`
+Default value : `'assets/scss/*.scss'`
 
 ### dest
 
-Voir [le paramètre `path` de `gulp.dest`](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
+See [`gulp.dest` `path` parameter](https://github.com/gulpjs/gulp/blob/4.0/docs/API.md#path).
 
-Valeur par défaut : `'web/css'`
+Default value : `'web/css'`
 
 ### autoprefixerOptions
 
-Un objet de configuration passé à [Autoprefixer](https://github.com/postcss/autoprefixer).
-Voir les [options d'Autoprefixer](https://github.com/postcss/autoprefixer#options).
+An [Autoprefixer configuration object](https://github.com/postcss/autoprefixer#options).
 
-Valeur par défaut :
+Default value :
 
 ```js
 {
@@ -78,10 +77,9 @@ Valeur par défaut :
 
 ### pxToRemOptions
 
-Un objet de configuration passé à [postcss-pxtorem](https://github.com/cuth/postcss-pxtorem).
-Voir les [options de postcss-pxtorem](https://github.com/cuth/postcss-pxtorem#options).
+A [postcss-pxtorem configuration object](https://github.com/cuth/postcss-pxtorem#options).
 
-Valeur par défaut :
+Default value :
 
 ```js
 {
@@ -91,10 +89,9 @@ Valeur par défaut :
 
 ### cssnanoOptions
 
-Un objet de configuration passé à [cssnano](https://github.com/ben-eb/cssnano).
-Voir les [optimisations de cssnano](http://cssnano.co/optimisations/).
+A [cssnano configuration object](http://cssnano.co/optimisations/).
 
-Valeur par défaut :
+Default value :
 
 ```js
 {
@@ -109,10 +106,10 @@ Valeur par défaut :
 
 ### sassOptions
 
-Un objet de configuration passé à [node-sass](https://github.com/sass/node-sass).
-Voir les [options de node-sass](https://github.com/sass/node-sass#options).
+A [node-sass configuration object](https://github.com/sass/node-sass#options).
 
-Valeur par défaut :
+Default value :
+
 ```js
 {
     outputStyle: "nested"
@@ -121,25 +118,23 @@ Valeur par défaut :
 
 ### production
 
-Booléen. Valeur par défaut : `false`
+Type: `boolean`
 
-Ce paramètre indique à la tâche si elle doit appliquer tous les traitements
-nécessaires à optimiser le CSS en sortie. Ces traitements sont les suivants :
+Default value : `false`
 
-* Pas de génération de sourcemaps
-* [Optimisations de cssnano](http://cssnano.co/optimisations/) qui ne sont pas
-explicitement désactivées (voir la configuration par défaut de cssnano, ou votre
-configuration)
+If `production === true`, then the output is minified. Be aware that the
+execution time is longer when you minify the output.
+
+Minification includes the following :
+
+* No sourcemaps generation
+* [cssnano optimisation](http://cssnano.co/optimisations/) that are not
+explicitly disabled
 
 ### lint
 
-Booléen. Valeur par défaut : `true`
+Type: `boolean`
 
-Active le linting à l'aide de [StyleLint](http://stylelint.io/). Lorsque le
-linting est activé, vous devez avoir un fichier de configuration StyleLint à la
-racine du projet. Le plus simple est d'extend
-[stylelint-config-wandi](https://github.com/WandiParis/stylelint-config-wandi).
+Default value : `true`
 
-Le linting arrête l'exécution de la tâche lorsqu'une erreur est levée. Si un
-avertissement est soulevé, celui-ci s'affiche uniquement en console, sans
-arrêter l'exécution de la tâche.
+Enables linting using [StyleLint](http://stylelint.io/).

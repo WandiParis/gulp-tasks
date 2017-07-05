@@ -1,6 +1,6 @@
 # gulp-javascripts
 
-Tâche gulp pour compiler le JS
+Gulp task that transpiles and bundles JavaScript
 
 ## Installation
 
@@ -8,9 +8,9 @@ Tâche gulp pour compiler le JS
 npm install --save-dev @wandiparis/gulp-javascripts
 ```
 
-## Utilisation
+## Usage
 
-Paramètres par défaut :
+Use with default parameters :
 
 ```js
 // gulpfile.js
@@ -26,7 +26,7 @@ module.exports = {
 };
 ```
 
-Paramètres custom (voir ci-dessous pour la liste complète des paramètres) :
+Use with custom parameters (see full list below) :
 
 ```js
 // gulpfile.js
@@ -52,8 +52,8 @@ module.exports = {
 
 ## watch
 
-Pour utiliser cette tâche dans une tâche `watch`, il ne faut pas utiliser la
-méthode `watch` de Gulp, mais faire ceci :
+To use this task in a `watch` task, you should not use gulp's `watch` method,
+but use webpack's watch mode :
 
 ```js
 const baseJavascripts = require("@wandiparis/gulp-javascripts");
@@ -67,16 +67,14 @@ const watch = () => {
 };
 ```
 
-De cette manière, le mode `watch` de webpack est utilisé. Celui-ci est très
-rapide puisqu'il utilise un cache interne qui lui permet de ne regénérer que
-ce qui a changé dans le module.
+Webpack's watch mode is fast because it uses an internal cache that allows it to
+recompile only code chunks that changed.
 
 ## `.babelrc`
 
-La tâche utilise [babel](https://babeljs.io/) et
-[babel-preset-env](https://github.com/babel/babel-preset-env). Il faut donc
-ajouter un fichier `.babelrc` à la racine du projet qui utilise la tâche. Ce
-fichier est de la forme suivante :
+The task uses [babel](https://babeljs.io/) and
+[babel-preset-env](https://github.com/babel/babel-preset-env). You must create a
+`.babelrc` file at the root of your project :
 
 ```json
 {
@@ -84,16 +82,13 @@ fichier est de la forme suivante :
 }
 ```
 
-Afin de lister les navigateurs sur lesquels le site va tourner, il est
-préférable d'ajouter un [fichier de configuration browserslist](https://github.com/ai/browserslist#config-file)
-ou une [propriété `browserslist`](https://github.com/ai/browserslist#packagejson) au `package.json`. Cela permet à tous les outils ayant besoin d'un liste de
-navigateurs de se baser sur la même liste, et ainsi de n'en maintenir qu'une.
+If you want to specify the browsers that your website supports, you must create
+a [browserslist config file](https://github.com/ai/browserslist#config-file) or
+add a [`browserslist` property](https://github.com/ai/browserslist#packagejson)
+to your `package.json`. This way, all the tools that need to know the browser
+your website supports will refer to this file.
 
-
-Pour une liste exhaustive des options, voir la documentation de
-[babel-preset-env](https://github.com/babel/babel-preset-env).
-
-## Paramètres
+## Parameters
 
 ### params
 
@@ -103,24 +98,24 @@ Type: `object`
 
 Type: `boolean`
 
-Valeur par défaut : `false`
+Default value : `false`
 
-Si `params.production === true`, alors le bundle sera minifié. Le temps de
-compilation est plus long avec minification.
+If `params.production === true`, then the bundle is minified. Be aware that the
+execution time is longer when you minify the output.
 
 #### params.rootDir
 
 Type: `string`
 
-Pas de valeur par défaut
+Required, no default value.
 
-Ce paramètre est obligatoire. Il doit être le chemin absolu jusqu'à la racine
-du projet. Généralement, passer `__dirname` lorsqu'on initialise la tâche dans
-le `gulpfile.js` suffit (voir les exemples ci-dessus).
+This is the absolute path to your project's root directory. Usually, pass
+`__dirname` will do the job.
 
 ### webpackConfig
 
 Type: `object`
 
-Un objet de configuration Webpack. Vous trouverez la documentation de Webpack
-sur leur [site](https://webpack.js.org/configuration/).
+A [webpack configuration object](https://webpack.js.org/configuration/).
+
+Default value : see [config.js](/packages/gulp-javascripts/task/config.js)
