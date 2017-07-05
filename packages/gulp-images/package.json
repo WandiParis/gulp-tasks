@@ -1,0 +1,29 @@
+{
+  "name": "@wandiparis/gulp-images",
+  "version": "1.0.0",
+  "description": "Gulp task that optimize images weight",
+  "main": "task/index.js",
+  "scripts": {
+    "test": "rimraf test/web/img/* && gulp compile --gulpfile ./test/gulpfile.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WandiParis/gulp-images.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WandiParis/gulp-images/issues"
+  },
+  "homepage": "https://github.com/WandiParis/gulp-images#readme",
+  "dependencies": {
+    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp-imagemin": "^3.0.2",
+    "gulp-newer": "^1.2.0",
+    "imagemin-mozjpeg": "^6.0.0",
+    "imagemin-pngquant": "^5.0.0"
+  },
+  "devDependencies": {
+    "rimraf": "^2.6.1"
+  }
+}

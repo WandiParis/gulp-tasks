@@ -4,7 +4,6 @@
   "description": "Generate a sprite from a set of PNG icon files",
   "main": "task/index.js",
   "scripts": {
-    "precommit": "lint-staged",
     "test": "gulp compile --gulpfile ./test/gulpfile.js"
   },
   "repository": {
@@ -23,21 +22,5 @@
     "gulp.spritesmith": "^6.3.0",
     "merge-stream": "^1.0.0",
     "rimraf": "^2.5.4"
-  },
-  "devDependencies": {
-    "@wandiparis/eslint-config-wandi": "^2.0.0-alpha.0",
-    "eslint": "^4.1.1",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-import": "^2.6.1",
-    "husky": "^0.14.2",
-    "lint-staged": "^4.0.0",
-    "prettier": "^1.5.2"
-  },
-  "lint-staged": {
-    "*.js": [
-      "eslint --fix",
-      "prettier --write",
-      "git add"
-    ]
   }
 }
