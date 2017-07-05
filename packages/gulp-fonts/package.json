@@ -1,6 +1,6 @@
 {
   "name": "@wandiparis/gulp-fonts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Gulp task that converts and optimizes fonts",
   "main": "task/index.js",
   "scripts": {

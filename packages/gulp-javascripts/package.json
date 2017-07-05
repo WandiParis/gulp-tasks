@@ -1,6 +1,6 @@
 {
   "name": "@wandiparis/gulp-javascripts",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Compile JavaScripts using Webpack",
   "main": "task/index.js",
   "directories": {
