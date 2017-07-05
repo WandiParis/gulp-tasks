@@ -6,16 +6,13 @@
   "scripts": {
     "test": "gulp compile --gulpfile ./test/gulpfile.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WandiParis/gulp-sprite.git"
-  },
+  "repository": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-sprite",
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WandiParis/gulp-sprite/issues"
+    "url": "https://github.com/WandiParis/gulp-tasks/issues"
   },
-  "homepage": "https://github.com/WandiParis/gulp-sprite#readme",
+  "homepage": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-sprite#readme",
   "dependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-replace": "^0.6.1",

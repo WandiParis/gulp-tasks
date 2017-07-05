@@ -9,16 +9,13 @@
   "scripts": {
     "test": "gulp compile --gulpfile ./test/gulpfile.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WandiParis/gulp-javascripts.git"
-  },
+  "repository": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-javascripts",
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WandiParis/gulp-javascripts/issues"
+    "url": "https://github.com/WandiParis/gulp-tasks/issues"
   },
-  "homepage": "https://github.com/WandiParis/gulp-javascripts#readme",
+  "homepage": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-javascripts#readme",
   "dependencies": {
     "babel-core": "^6.25.0",
     "babel-loader": "^7.1.1",

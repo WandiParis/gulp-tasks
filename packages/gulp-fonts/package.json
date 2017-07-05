@@ -1,21 +1,18 @@
 {
   "name": "@wandiparis/gulp-fonts",
   "version": "1.0.0",
-  "description": "",
+  "description": "Gulp task that converts and optimizes fonts",
   "main": "task/index.js",
   "scripts": {
     "test": "gulp compile --gulpfile ./test/gulpfile.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WandiParis/gulp-fonts.git"
-  },
+  "repository": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-fonts",
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WandiParis/gulp-fonts/issues"
+    "url": "https://github.com/WandiParis/gulp-tasks/issues"
   },
-  "homepage": "https://github.com/WandiParis/gulp-fonts#readme",
+  "homepage": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-fonts#readme",
   "dependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-fontmin": "^0.7.4",

@@ -6,16 +6,13 @@
   "scripts": {
     "test": "rimraf test/web/img/* && gulp compile --gulpfile ./test/gulpfile.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/WandiParis/gulp-images.git"
-  },
+  "repository": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-images",
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/WandiParis/gulp-images/issues"
+    "url": "https://github.com/WandiParis/gulp-tasks/issues"
   },
-  "homepage": "https://github.com/WandiParis/gulp-images#readme",
+  "homepage": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-images#readme",
   "dependencies": {
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-imagemin": "^3.0.2",
