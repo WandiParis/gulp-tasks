@@ -2,9 +2,9 @@ const gulp = require("gulp");
 const spritesmith = require("gulp.spritesmith");
 const replace = require("gulp-replace");
 const merge = require("merge-stream");
-const { sync: rm } = require("rimraf");
 const config = require("./config");
 const uniqid = require("uniqid");
+const newer = require("gulp-newer");
 
 const sprite = (params = {}) => {
   const cfg = Object.assign({}, config, params);
@@ -12,9 +12,7 @@ const sprite = (params = {}) => {
   const { cssName, imgPath, imgName, scssDest, src } = cfg;
 
   const task = () => {
-    rm(`${imgPath}/${imgName}`);
-
-    const spriteStreams = gulp.src(src).pipe(
+    const spriteStreams = gulp.src(src).pipe(newer(imgPath + "/" + imgName)).pipe(
       spritesmith({
         imgName,
         cssName
