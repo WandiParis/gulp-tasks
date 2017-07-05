@@ -4,6 +4,7 @@ const replace = require("gulp-replace");
 const merge = require("merge-stream");
 const { sync: rm } = require("rimraf");
 const config = require("./config");
+const uniqid = require("uniqid");
 
 const sprite = (params = {}) => {
   const cfg = Object.assign({}, config, params);
@@ -24,6 +25,7 @@ const sprite = (params = {}) => {
 
     spriteStreams.css
       .pipe(replace(`'${imgName}'`, `'../img/${imgName}'`))
+      .pipe(replace("nth($sprite, 9)", `'#{nth($sprite, 9)}?${uniqid()}'`))
       .pipe(gulp.dest(scssDest));
 
     return merge(spriteStreams.img, spriteStreams.css);
