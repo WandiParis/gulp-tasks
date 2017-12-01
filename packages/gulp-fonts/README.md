@@ -2,6 +2,8 @@
 
 Gulp task that converts and optimizes fonts
 
+[![npm version](https://badge.fury.io/js/%40wandiparis%2Fgulp-fonts.svg)](https://badge.fury.io/js/%40wandiparis%2Fgulp-fonts)
+
 ## Installation
 
 ```

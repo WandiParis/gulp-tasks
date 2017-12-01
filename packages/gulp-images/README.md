@@ -2,6 +2,8 @@
 
 Gulp task that optimizes images
 
+[![npm version](https://badge.fury.io/js/%40wandiparis%2Fgulp-images.svg)](https://badge.fury.io/js/%40wandiparis%2Fgulp-images)
+
 ## Installation
 
 ```

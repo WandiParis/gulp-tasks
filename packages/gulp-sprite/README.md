@@ -2,6 +2,8 @@
 
 Gulp task that generates a sprite from a PNG icons directory.
 
+[![npm version](https://badge.fury.io/js/%40wandiparis%2Fgulp-sprite.svg)](https://badge.fury.io/js/%40wandiparis%2Fgulp-sprite)
+
 ## Installation
 
 ```

@@ -2,6 +2,8 @@
 
 Gulp task that compiles SCSS files.
 
+[![npm version](https://badge.fury.io/js/%40wandiparis%2Fgulp-styles.svg)](https://badge.fury.io/js/%40wandiparis%2Fgulp-styles)
+
 ## Installation
 
 ```

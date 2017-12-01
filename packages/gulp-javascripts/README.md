@@ -2,6 +2,8 @@
 
 Gulp task that transpiles and bundles JavaScript
 
+[![npm version](https://badge.fury.io/js/%40wandiparis%2Fgulp-javascripts.svg)](https://badge.fury.io/js/%40wandiparis%2Fgulp-javascripts)
+
 ## Installation
 
 ```
