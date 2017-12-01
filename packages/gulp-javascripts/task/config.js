@@ -1,10 +1,10 @@
 const webpack = require("webpack");
 const path = require("path");
 
-const getConfig = ({ production, rootDir }) => ({
+const getConfig = production => ({
   entry: "./assets/js/global.js",
   output: {
-    path: path.join(rootDir, "web", "js"),
+    path: path.join(process.cwd(), "web/js"),
     filename: "global.js"
   },
   module: {

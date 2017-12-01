@@ -1,10 +1,9 @@
-const gulp = require("gulp");
 const util = require("gulp-util");
 const webpack = require("webpack");
 const getConfig = require("./config");
 
-const javascripts = (params = { production: false }, webpackConfig = {}) => {
-  const cfg = Object.assign({}, getConfig(params), webpackConfig);
+const javascripts = (production = false, webpackConfig = {}) => {
+  const cfg = Object.assign({}, getConfig(production), webpackConfig);
 
   const task = done => {
     webpack(cfg, (err, stats) => {
