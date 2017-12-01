@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "precommit": "lint-staged"
+    "precommit": "lint-staged",
+    "publish": "lerna publish"
   },
   "devDependencies": {
     "@wandiparis/eslint-config-wandi": "^2.0.0",
