@@ -20,5 +20,8 @@
     "gulp.spritesmith": "^6.3.0",
     "merge-stream": "^1.0.0",
     "uniqid": "^4.1.1"
+  },
+  "publishConfig": {
+    "access": "public"
   }
 }
