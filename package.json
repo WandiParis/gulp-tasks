@@ -3,14 +3,14 @@
     "precommit": "lint-staged"
   },
   "devDependencies": {
-    "@wandiparis/eslint-config-wandi": "^2.0.0-alpha.0",
-    "eslint": "^4.1.1",
-    "eslint-config-prettier": "^2.3.0",
-    "eslint-plugin-import": "^2.6.1",
+    "@wandiparis/eslint-config-wandi": "^2.0.0",
+    "eslint": "^4.12.1",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3",
-    "lerna": "^2.0.0-rc.5",
-    "lint-staged": "^4.0.0",
-    "prettier": "^1.5.2"
+    "lerna": "^2.5.1",
+    "lint-staged": "^4.3.0",
+    "prettier": "^1.8.2"
   },
   "lint-staged": {
     "*.js": [
