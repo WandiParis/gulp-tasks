@@ -19,9 +19,7 @@ Use with default parameters :
 
 const javascripts = require("@wandiparis/gulp-javascripts");
 
-const compile = javascripts({
-    rootDir: __dirname,
-});
+const compile = javascripts();
 
 module.exports = {
     compile,
@@ -36,10 +34,7 @@ Use with custom parameters (see full list below) :
 const javascripts = require("@wandiparis/gulp-javascripts");
 const path = require("path");
 
-const compile = javascripts({
-    production: true,
-    rootDir: __dirname,
-}, {
+const compile = javascripts(true, {
     entry: "./path/to/entry.js",
     output: {
         path: path.join(__dirname, "path", "to", "output"),
@@ -61,9 +56,7 @@ but use webpack's watch mode :
 const baseJavascripts = require("@wandiparis/gulp-javascripts");
 
 const watch = () => {
-    baseJavascripts({
-        rootDir: __dirname
-    }, {
+    baseJavascripts(false, {
         watch: true
     });
 };
@@ -92,27 +85,14 @@ your website supports will refer to this file.
 
 ## Parameters
 
-### params
-
-Type: `object`
-
-#### params.production
+### production
 
 Type: `boolean`
 
 Default value : `false`
 
-If `params.production === true`, then the bundle is minified. Be aware that the
+If `production === true`, then the bundle is minified. Be aware that the
 execution time is longer when you minify the output.
-
-#### params.rootDir
-
-Type: `string`
-
-Required, no default value.
-
-This is the absolute path to your project's root directory. Usually, pass
-`__dirname` will do the job.
 
 ### webpackConfig
 
