@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-fonts#readme",
   "dependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "4.0",
     "gulp-fontmin": "^0.7.4",
     "gulp-newer": "^1.2.0"
   },

@@ -14,7 +14,7 @@
   },
   "homepage": "https://github.com/WandiParis/gulp-tasks/tree/master/packages/gulp-images#readme",
   "dependencies": {
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "4.0",
     "gulp-imagemin": "^3.0.2",
     "gulp-newer": "^1.2.0",
     "imagemin-mozjpeg": "^6.0.0",
