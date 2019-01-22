@@ -1,6 +1,6 @@
 {
   "name": "@wandiparis/gulp-images",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Gulp task that optimize images weight",
   "main": "task/index.js",
   "scripts": {
